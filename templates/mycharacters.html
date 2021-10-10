@@ -1,0 +1,17 @@
+{% extends "index.html" %} {% block content %}
+<div class="character-btns">
+	<a href="/mycharacters/new">New Character</a>
+	</div>
+<div class="grid-character-container">
+{% for character in characters %}
+	<div class="grid-character-item">
+	<a href="{% url 'editcharacter' pk=character.pk %}">Edit</a>
+	<h1>{{ character.name }}</h1>
+	<h2>{{ character.race }} </h2>
+	<h2>{{ character.class_level }}</h2>
+    <img src="{{ character.portrait.url }}">
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

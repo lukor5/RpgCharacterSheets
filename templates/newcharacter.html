@@ -1,0 +1,62 @@
+{% extends "index.html" %} {% block content %}
+	
+<form method="POST" action="" enctype="multipart/form-data">
+	{% csrf_token %}	
+	{{ form.user }}
+	<div class="grid-container">
+		<div class="grid-item">
+			{{ form.user_as_hidden }}
+			{{ form.name }}<br> <label for="characterName">CHARACTER
+				NAME</label><br>
+		</div>
+		<div class="grid-item">
+			{{ form.class_level }}<br> <label for="characterClass">CLASS
+				& LEVEL</label><br> {{ form.race }}<br> <label for="characterRace">RACE</label><br>
+		</div>
+		<div class="grid-item">
+			{{ form.background }}<br> <label for="characterBackground">BACKGROUND</label><br>
+			{{ form.alignment }}<br> <label for="characterAlignment">ALIGNMENT</label><br>
+		</div>
+		<div class="grid-item">
+			{{ form.player_name }}<br> <label for="characterPlayerName">PLAYER
+				NAME</label><br> {{ form.xp }}<br> <label for="characterXP">EXPERIENCE
+				POINTS</label><br>
+		</div>
+		<div class="grid-item" id="attributes">
+			<label for="STR">STR</label> {{ form.str }}<br> <label for="DEX">DEX</label>
+			{{ form.dex }}<br> <label for="CON">CON</label> {{ form.con }}<br>
+			<label for="INT">INT</label> {{ form.int }}<br> <label for="WIS">WIS</label>
+			{{ form.wis }}<br> <label for="CHA">CHA</label> {{ form.cha }}<br>
+		</div>
+		<div class="grid-item" id="attributes">
+			<div>
+				<label for="saveSTR">STR</label>{{ form.str_save }}<br> <label
+					for="saveDEX">DEX</label>{{ form.dex_save }}<br> <label
+					for="saveCON">CON</label>{{ form.con_save }} <br> <label
+					for="saveINT">INT</label>{{ form.int_save }}<br> <label
+					for="saveWIS">WIS</label>{{ form.wis_save }}<br> <label
+					for="saveCHA">CHA</label>{{ form.cha_save }}<br>
+				<h2>SAVING THROWS</h2>
+			</div>
+		</div>
+		<div class="grid-item">
+			<div class="grid-container" id="acGRID">
+				<div class="grid-item">
+					<label for="AC">AC</label> {{ form.ac }}
+				</div>
+				<div class="grid-item">
+					<label for="INITIATIVE">INIT</label> {{ form.init }}
+				</div>
+				<div class="grid-item">
+					<label for="SPEED">SPEED</label> {{ form.speed }}
+				</div>
+			</div>
+			{{ form.hp }}<br> <label for="hitpoint">HITPOINTS/MAX
+				HITPOINTS</label> {{ form.hp_temp }}<br> <label for="tempHitpoint">TEMP
+				HITPOINTS </label>
+		</div>
+		<div class="grid-item">{{ form.portrait }}</div>
+	</div>
+	<button type="submit">Save</button>
+</form>
+{% endblock %}

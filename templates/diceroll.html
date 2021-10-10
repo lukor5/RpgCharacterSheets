@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block head %}
+<script type="text/javascript" src="{% static '/js/diceroll.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/dices.css' %}" />
+{% endblock %}
+
+{% block content %} 
+<header><h1>Good luck</h1></header>
+<p>How many dices would you like to roll?</p>
+<p><input type="number" id="diceCount" min="1" max="10" value="1" onkeyup="checkNumberRange(this)"></p>
+<button id="d20" onclick="getDiceRoll('1','20')">d20</button>
+<button id="d12" onclick="getDiceRoll('1','12')">d12</button>
+<button id="d10" onclick="getDiceRoll('1','10')">d10</button>
+<button id="d8" onclick="getDiceRoll('1','8')">d8</button>
+<button id="d6" onclick="getDiceRoll('1','6')">d6</button>
+<button id="d4" onclick="getDiceRoll('1','4')">d4</button>
+<div class="rollContainer">
+	<div id="rolls"></div>
+	<div id="total"></div>
+</div>
+{% endblock %}
