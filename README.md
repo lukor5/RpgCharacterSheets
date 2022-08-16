@@ -1,4 +1,4 @@
-Crud app made to store my D&D character sheets.
+Crud app made to store my D&D character sheets. I learned CSS Grid, routing in Django and Sql queries.
 
 Working features:
 - Registration/Login
