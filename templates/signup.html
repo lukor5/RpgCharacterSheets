@@ -18,6 +18,9 @@
 				<td>{{ form.password2 }}</td>
 			</tr>
 		</table>
+		{% if error_message %}
+    <p class="error-message">{{ error_message }}</p>
+{% endif %}
 		<button type="submit">Sign up</button>
 	</form>
 {% endblock %}
