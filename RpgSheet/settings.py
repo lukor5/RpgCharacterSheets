@@ -27,7 +27,9 @@ SECRET_KEY = 'e5&2*(q#q6it0)8)(y!-(f3#fdx1a$^l(_n+7&_&atw-@z8bxx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'rpgcharactersheets.onrender.com'
+]
 
 
 # Application definition
