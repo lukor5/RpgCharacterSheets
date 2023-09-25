@@ -50,16 +50,10 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            
-            if user is not None:
-                # Authentication succeeded, so log in the user
-                login(request, user)
-                return redirect('index')
-            else:
-                # Authentication failed, show an error message
-                error_message = "Invalid username or password. Please try again."
-                return render(request, 'signup.html', {'form': form, 'error_message': error_message})
+            login(request, user)
+            return redirect('index')
     else:
+        error_message = "Invalid username or password. Please try again."
         form = UserCreationForm()
-    
-    return render(request, 'signup.html', {'form': form})
+        return render(request, 'signup.html', {'form': form, 'error_message': error_message})
+    return render(request, 'signup.html', {'form': form, 'error_message': error_message})
