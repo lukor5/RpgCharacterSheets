@@ -56,4 +56,4 @@ def signup(request):
         error_message = "Invalid username or password. Please try again."
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form, 'error_message': error_message})
-    return render(request, 'signup.html', {'form': form, 'error_message': error_message})
+    return render(request, 'signup.html', {'form': form})
