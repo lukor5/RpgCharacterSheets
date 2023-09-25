@@ -52,8 +52,8 @@ def signup(request):
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             return redirect('index')
-    else:
-        error_message = "Invalid username or password. Please try again."
-        form = UserCreationForm()
-        return render(request, 'signup.html', {'form': form, 'error_message': error_message})
+        else:
+            error_message = "Invalid username or password. Please try again."
+            form = UserCreationForm()
+            return render(request, 'signup.html', {'form': form, 'error_message': error_message})
     return render(request, 'signup.html', {'form': form})
