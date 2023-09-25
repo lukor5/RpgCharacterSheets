@@ -54,6 +54,6 @@ def signup(request):
             login(request, user)
             return redirect('index')
         else:
-            error_message = "Invalid username or password. Please try again."
+            error_message = "Invalid username or password. Try using numbers in password."
             return render(request, 'signup.html', {'form': form, 'error_message': error_message})
     return render(request, 'signup.html', {'form': form})
